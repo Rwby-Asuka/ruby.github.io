@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>你的名字 - Personal Homepage</title>
+  <title>何如玢 Rubin He - Personal Homepage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
@@ -20,7 +20,7 @@
       color: var(--text-main);
     }
     .card {
-      max-width: 820px;
+      max-width: 900px;
       margin: 0 auto;
       background: #ffffff;
       border-radius: 18px;
@@ -77,8 +77,8 @@
       margin: 4px 0 0;
     }
     ul {
-      margin: 4px 0 0;
-      padding-left: 20px;
+      margin: 6px 0 0;
+      padding-left: 18px;
     }
     a {
       color: var(--accent);
@@ -104,6 +104,13 @@
       color: var(--text-muted);
       font-size: 14px;
     }
+    .year {
+      font-weight: 600;
+      color: #374151;
+    }
+    .paper-title {
+      font-weight: 600;
+    }
     @media (max-width: 600px) {
       .card { padding: 20px 18px 24px; }
       .name { font-size: 24px; }
@@ -114,37 +121,113 @@
 <body>
   <main class="card">
     <header>
-      <!-- 圆形头像的字母，可以改成你名字首字母 -->
-      <div class="avatar">Q</div>
+      <!-- 这里的字母可以换成你名字首字母 -->
+      <div class="avatar">H</div>
       <div>
-        <div class="name">你的名字</div>
-        <div class="tagline">某某大学 · 计算机科学 · 博士生</div>
-        <div class="muted">大语言模型安全 / LLM Backdoor / 模型对齐</div>
+        <div class="name">何如玢 Rubin He</div>
+        <div class="tagline">西北工业大学 · 信息类 / 计算机方向 · 博士研究生</div>
+        <div class="muted">
+          主要研究 LLM 安全与检索增强生成（RAG），聚焦组合触发、后门攻击与理论建模。
+        </div>
       </div>
     </header>
 
     <section>
       <h2>About</h2>
       <p>
-        在这里用一两句话介绍自己，比如：我目前在 XXX 大学读博士，研究大语言模型安全与后门攻击相关问题。
+        我目前在西北工业大学攻读博士学位，研究方向围绕
+        <strong>检索增强生成（RAG）系统的安全性</strong>，
+        关注后门攻击、组合触发机制以及背后的信息论与优化理论。
+      </p>
+      <p>
+        我的目标是：一方面基于真实系统挖掘新的攻击面（多跳检索、布局、多模态等），
+        另一方面构建可解释的理论框架（如“触发信容”），
+        为可信 RAG 系统的安全评估和防御设计提供可计算的支撑。:contentReference[oaicite:1]{index=1}
       </p>
     </section>
 
     <section>
       <h2>Research Interests</h2>
       <div class="chips">
-        <span class="chip">大模型后门攻击</span>
-        <span class="chip">后门防御</span>
-        <span class="chip">安全评估</span>
-        <span class="chip">多智能体 / 工程化</span>
+        <span class="chip">检索增强生成（RAG）安全</span>
+        <span class="chip">大语言模型后门 & 数据投毒</span>
+        <span class="chip">多跳/组合触发机制</span>
+        <span class="chip">布局级 & 文档结构攻击</span>
+        <span class="chip">多模态触发与 RAG</span>
+        <span class="chip">触发信容理论与量化分析</span>
       </div>
+    </section>
+
+    <section>
+      <h2>Research Experience</h2>
+
+      <p class="year">[1] 2022–2023 · 图像信息量度量与模型评价</p>
+      <ul>
+        <li>
+          研究方向：图像特征提取、知识蒸馏、信息瓶颈、模型评价。
+        </li>
+        <li>
+          论文：
+          <span class="paper-title">“图像信息量度量 (Measuring the Information of Images)”</span>，
+          中国科学：信息科学，2023（CCF-A，已接收）。
+        </li>
+        <li>
+          工作简介：提出面向不同数据集与任务的图像信息度量新范式，自适应刻画图像信息量的
+          个体差异与任务特异性，为后续安全攻击中“信息承载能力”的建模提供直觉基础。
+        </li>
+      </ul>
+
+      <p class="year" style="margin-top:10px;">[2] 2024–2025 · RAG / 多模态 / AI 安全</p>
+      <ul>
+        <li>
+          研究方向：检索增强生成（RAG）、多模态大模型、AI 安全与后门攻击。
+        </li>
+        <li>
+          <span class="paper-title">BadHhop: exploiting multi-hop composition as a new backdoor attack surface in RAG</span><br>
+          利用多跳检索与跨文档组合这一 RAG 特有流程，提出“多跳触发器”：
+          无害片段分布在不同文档中，仅在被检索器联合召回并组合时才重构恶意指令，
+          揭示 RAG 多跳链路带来的新型攻击面。
+        </li>
+        <li>
+          <span class="paper-title">Distributed Triggers: A Unified Framework over Token, Sentence, and Layout</span><br>
+          将传统单点触发扩展为词元 / 句子 / 布局三层级的分布式触发框架，
+          在统一建模下分析分布式触发的可迁移性与隐蔽性，为 RAG 文档结构攻击提供基础。:contentReference[oaicite:2]{index=2}
+        </li>
+        <li>
+          <span class="paper-title">CAT: Compositional Awareness Trigger for Multi-Modal Input Activation</span>（在研）<br>
+          挖掘多模态 RAG/MLLM 的组合攻击面，设计仅在特定模态组合（多图、图文共现等）
+          下被激活的隐蔽触发器，并结合多模态对齐与检索机制优化训练流程。
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>PhD Thesis: Trigger Capacity for RAG</h2>
+      <p>
+        我的博士论文聚焦于
+        <strong>面向检索增强生成系统的组合触发建模与触发信容理论</strong>。
+        在 RAG 中，攻击不再是单一输入，而是可以跨检索链路、文档结构和多模态协同地组合触发。:contentReference[oaicite:3]{index=3}
+      </p>
+      <p>
+        围绕这一问题，我主要从四个方向展开：
+      </p>
+      <ul>
+        <li><strong>链路嵌套触发：</strong>基于“检索–重排–生成”级联结构，研究多环节嵌套触发与路径放大效应。</li>
+        <li><strong>结构布局触发：</strong>利用段落、标题、公式、表格等布局组合构造布局级攻击，分析结构耦合带来的触发稳定性与隐蔽性。:contentReference[oaicite:4]{index=4}</li>
+        <li><strong>多模态协同触发：</strong>在图文等多模态 RAG 中，研究跨模态对齐与“路由”不确定性，设计图像+文本协同触发机制。</li>
+        <li><strong>触发信容（Trigger Capacity）：</strong>
+          从信息论和优化角度，定义组合触发在给定成本和冗余约束下能携带的“攻击信息容量”，
+          同时考虑触发在<span style="white-space:nowrap;">位置 / 模态 / 链路</span>上的分布特性，构建跨结构、跨模态、跨环节的统一量化指标，
+          为投毒率、攻击成功率与部署策略之间的权衡提供理论刻画。
+        </li>
+      </ul>
     </section>
 
     <section>
       <h2>Contact</h2>
       <p>Email: <a href="mailto:your_email@example.com">your_email@example.com</a></p>
-      <!-- 如果想显示 GitHub，可以把下面一行的注释去掉并改名字 -->
-      <!-- <p>GitHub: <a href="https://github.com/你的用户名">你的用户名</a></p> -->
+      <!-- 如果想显示 GitHub，可以把下面一行的注释去掉并改用户名 -->
+      <!-- <p>GitHub: <a href="https://github.com/RwbyAsuka">RwbyAsuka</a></p> -->
     </section>
   </main>
 </body>
